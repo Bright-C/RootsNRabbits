@@ -17,8 +17,9 @@ public class Goal : MonoBehaviour
         
     }
 
-    public void GoToNextLevel()
+    public void ReachGoal()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LevelManager.Instance.WinLevel();
+        InputManager.Instance.InputActions.Disable();
     }
 }

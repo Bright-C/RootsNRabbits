@@ -6,6 +6,6 @@ public class InteractWithGoalBehaviour : InteractWithCollisionBehaviour<Goal>
 {
     override protected void OnTriggerEnterInteraction(Goal goal)
     {
-        goal.GoToNextLevel();
+        goal.ReachGoal();
     }
 }
