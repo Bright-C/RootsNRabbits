@@ -31,7 +31,10 @@ public class RabbitMovement : MonoBehaviour
     {
         if (obj.ReadValueAsButton())
         {
-            _myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
+            if (isGrounded)
+            {
+                _myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
+            }
         }
     }
 
