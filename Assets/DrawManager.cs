@@ -21,15 +21,19 @@ public class DrawManager : MonoBehaviour
     {
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && LevelManager.Instance.HasSeeds())
         {
+            LevelManager.Instance.ConsumeSeed();
             _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
         }
-        if (Input.GetMouseButton(0)) 
+        if (_currentLine != null)
         {
-            if (_currentLine.TotalLength < MAXLENGTH)
+            if (Input.GetMouseButton(0))
             {
-                _currentLine.SetPosition(mousePos);
+                if (_currentLine.TotalLength < MAXLENGTH)
+                {
+                    _currentLine.SetPosition(mousePos);
+                }
             }
         }
     }

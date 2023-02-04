@@ -47,7 +47,7 @@ public abstract class InteractWithCollisionBehaviour<T> : MonoBehaviour where T 
         interactOnCollisionStay = m_onCollisionStay.GetBaseDefinition().DeclaringType != m_onCollisionStay.DeclaringType;
     }
 
-    protected virtual void OnTriggerEnter(Collider collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (interactOnTriggerEnter)
         {
@@ -59,7 +59,7 @@ public abstract class InteractWithCollisionBehaviour<T> : MonoBehaviour where T 
         }
     }
 
-    protected virtual void OnTriggerExit(Collider collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (interactOnTriggerExit)
         {
@@ -71,7 +71,7 @@ public abstract class InteractWithCollisionBehaviour<T> : MonoBehaviour where T 
         }
     }
 
-    protected virtual void OnTriggerStay(Collider collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (interactOnTriggerStay)
         {
@@ -83,7 +83,7 @@ public abstract class InteractWithCollisionBehaviour<T> : MonoBehaviour where T 
         }
     }
 
-    protected virtual void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (interactOnCollisionEnter)
         {
@@ -95,7 +95,7 @@ public abstract class InteractWithCollisionBehaviour<T> : MonoBehaviour where T 
         }
     }
 
-    protected virtual void OnCollisionExit(Collision collision)
+    protected virtual void OnCollisionExit2D(Collision2D collision)
     {
         if (interactOnCollisionExit)
         {
@@ -107,7 +107,7 @@ public abstract class InteractWithCollisionBehaviour<T> : MonoBehaviour where T 
         }
     }
 
-    protected virtual void OnCollisionStay(Collision collision)
+    protected virtual void OnCollisionStay2D(Collision2D collision)
     {
         if (interactOnCollisionStay)
         {
