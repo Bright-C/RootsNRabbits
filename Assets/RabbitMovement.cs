@@ -1,5 +1,7 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,6 +24,7 @@ public class RabbitMovement : MonoBehaviour
     public bool isGrounded;
     public ContactFilter2D myContactFilter;
     [SerializeField] Rigidbody2D _myRigidbody;
+    private Vector2 _normal = new Vector2(0,1);
 
     // Start is called before the first frame update
     void Start()
@@ -77,5 +80,32 @@ public class RabbitMovement : MonoBehaviour
         {
             jumpCooldownCount = 0;
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        List<ContactPoint2D> contacts = new();
+        collision.GetContacts(contacts);
+        if(contacts.Count > 1)
+        {
+            Vector2 stdNormal = new Vector2(0, 1);
+            Vector2 newNormal = -stdNormal;
+            foreach (var contact in contacts)
+            {
+                float addNormal = (newNormal - stdNormal).magnitude;
+                float addContact = (contact.normal - stdNormal).magnitude;
+
+                if (addContact < addNormal)
+                    newNormal = contact.normal;
+            }
+            _normal = newNormal;
+        }
+
+        Orientate();
+    }
+
+    private void Orientate()
+    {
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, _normal);
     }
 }
