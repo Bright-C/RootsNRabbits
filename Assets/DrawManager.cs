@@ -6,6 +6,7 @@ public class DrawManager : MonoBehaviour
 {
     private Camera _cam;
     [SerializeField] private Line _linePrefab;
+    public LayerMask growableLayers;
 
     public const float RESOLUTION = .1f;
     public const float MAXLENGTH = 6;
@@ -20,8 +21,9 @@ public class DrawManager : MonoBehaviour
     void Update()
     {
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
+        bool isGrowableLayer = Physics2D.OverlapPoint(mousePos, growableLayers);
 
-        if (Input.GetMouseButtonDown(0) && LevelManager.Instance.HasSeeds())
+        if (Input.GetMouseButtonDown(0) && LevelManager.Instance.HasSeeds() && isGrowableLayer)
         {
             LevelManager.Instance.ConsumeSeed();
             _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
