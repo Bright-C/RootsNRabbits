@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumVelocity: 5
   speedMultiplier: 500
+  jumpForce: 200
   slowdownMultiplier: 500
   _myRigidbody: {fileID: 118629168}
 --- !u!70 &118629170

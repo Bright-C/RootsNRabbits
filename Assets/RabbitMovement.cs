@@ -7,20 +7,39 @@ public class RabbitMovement : MonoBehaviour
 {
     public float maximumVelocity = 5;
     public float speedMultiplier = 10;
+    public float AirSlowdown
+    {
+        get 
+        {
+            return isGrounded ? 1f : 0.5f;
+        }
+    }
+    public float jumpForce = 200;
     public float slowdownMultiplier = 10;
+    public float castDistance = 0.1f;
+    public bool isGrounded;
+    public ContactFilter2D myContactFilter;
     [SerializeField] Rigidbody2D _myRigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
+        InputManager.Instance.InputActions.Player.Jump.performed += JumpPerformed;
+    }
 
+    private void JumpPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        if (obj.ReadValueAsButton())
+        {
+            _myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 movement = InputManager.Instance.InputActions.Player.Move.ReadValue<Vector2>();
-        _myRigidbody.AddForce(movement * speedMultiplier * Time.deltaTime);
+        _myRigidbody.AddForce(movement * speedMultiplier * Time.deltaTime * AirSlowdown);
         if (_myRigidbody.velocity.x > maximumVelocity)
         {
             _myRigidbody.AddForce(new Vector2(-slowdownMultiplier * Time.deltaTime, 0));
@@ -30,6 +49,15 @@ public class RabbitMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        List<RaycastHit2D> results = new();
+        _myRigidbody.Cast(Vector2.down, results, castDistance);
+        if (results.Count > 0)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 }
