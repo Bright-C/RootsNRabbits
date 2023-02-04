@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 4017695651334883374}
   _collider: {fileID: 4017695651334883369}
+  _totalLength: 0
 --- !u!120 &4017695651334883374
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -159,10 +160,10 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.14
   m_Points:
-  - {x: 14.274901, y: -0.4176786}
-  - {x: 15.274901, y: -0.4176786}
+  - {x: 0, y: 0}
+  - {x: 1, y: 1}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

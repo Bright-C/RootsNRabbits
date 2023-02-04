@@ -45,6 +45,7 @@ public class RabbitMovement : MonoBehaviour
     void Update()
     {
         Vector2 movement = InputManager.Instance.InputActions.Player.Move.ReadValue<Vector2>();
+        movement.y = 0;
         _myRigidbody.AddForce(movement * speedMultiplier * Time.deltaTime * AirSlowdown);
         if (_myRigidbody.velocity.x > maximumVelocity)
         {
