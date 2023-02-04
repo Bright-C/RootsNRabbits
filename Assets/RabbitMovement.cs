@@ -28,7 +28,7 @@ public class RabbitMovement : MonoBehaviour
     //orientation
     private Vector2 _normal = new Vector2(0,1);
     private Vector2 _lastPosition;
-    private float _epsilonPosition = 1f;
+    private float _epsilonPosition = 0.1f;
     private bool _orientated = false;
 
     // Start is called before the first frame update
