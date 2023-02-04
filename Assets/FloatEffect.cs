@@ -6,7 +6,7 @@ using UnityEngine;
 public class FloatEffect : MonoBehaviour
 {
     public float endValue = 0.5f;
-    public float duration = 0.25f;
+    public float duration = 1f;
     // Start is called before the first frame update
     void Start()
     {
