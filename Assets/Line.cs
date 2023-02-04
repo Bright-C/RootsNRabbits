@@ -9,7 +9,7 @@ public class Line : MonoBehaviour
     [SerializeField] private EdgeCollider2D _collider;
 
     [SerializeField] float _totalLength = 0;
-    public float TotalLength 
+    public float TotalLength
     {
         private set => _totalLength = value;
         get => _totalLength;
@@ -24,7 +24,7 @@ public class Line : MonoBehaviour
 
     void Update()
     {
-
+        _renderer.material.SetFloat("_Fade", _totalLength/6f);
     }
 
     public void SetPosition(Vector2 pos)
