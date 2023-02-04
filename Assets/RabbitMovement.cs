@@ -15,6 +15,8 @@ public class RabbitMovement : MonoBehaviour
         }
     }
     public float jumpForce = 200;
+    public float jumpCooldown = 0.5f;
+    public float jumpCooldownCount = 0;
     public float slowdownMultiplier = 10;
     public float castDistance = 0.1f;
     public bool isGrounded;
@@ -31,8 +33,9 @@ public class RabbitMovement : MonoBehaviour
     {
         if (obj.ReadValueAsButton())
         {
-            if (isGrounded)
+            if (isGrounded && jumpCooldownCount == 0)
             {
+                jumpCooldownCount = jumpCooldown;
                 _myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
             }
         }
@@ -52,6 +55,7 @@ public class RabbitMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //grounding
         List<RaycastHit2D> results = new();
         _myRigidbody.Cast(Vector2.down, results, castDistance);
         if (results.Count > 0)
@@ -61,6 +65,16 @@ public class RabbitMovement : MonoBehaviour
         else
         {
             isGrounded = false;
+        }
+
+        //jumping
+        if (jumpCooldownCount > 0)
+        {
+            jumpCooldownCount -= Time.fixedDeltaTime;
+        }
+        else
+        {
+            jumpCooldownCount = 0;
         }
     }
 }
