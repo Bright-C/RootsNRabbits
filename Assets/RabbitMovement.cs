@@ -2,6 +2,7 @@ using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,7 +25,11 @@ public class RabbitMovement : MonoBehaviour
     public bool isGrounded;
     public ContactFilter2D myContactFilter;
     [SerializeField] Rigidbody2D _myRigidbody;
+    //orientation
     private Vector2 _normal = new Vector2(0,1);
+    private Vector2 _lastPosition;
+    private float _epsilonPosition = 1f;
+    private bool _orientated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -82,11 +87,11 @@ public class RabbitMovement : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    CalcNormal(collision);
-    //    Orientate();
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CalcNormal(collision);
+        Orientate();
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -96,21 +101,35 @@ public class RabbitMovement : MonoBehaviour
 
     private void CalcNormal(Collision2D collision)
     {
+        if((_myRigidbody.position - _lastPosition).magnitude < _epsilonPosition)
+        {
+            if(!_orientated)
+            {
+                _orientated = true;
+            }
+            else
+            {
+                _orientated = false;
+                return;
+            }
+        }
+        _lastPosition = _myRigidbody.position;
+
         List<ContactPoint2D> contacts = new();
         collision.GetContacts(contacts);
-        if (contacts.Count > 1)
+        if (contacts.Count > 0)
         {
-            Vector2 stdNormal = new Vector2(0, 1);
-            Vector2 newNormal = -stdNormal;
-            foreach (var contact in contacts)
+            int index = 0;
+            float minY = float.MaxValue;
+            for (int i = 0; i < contacts.Count; ++i)
             {
-                float addNormal = (newNormal - stdNormal).magnitude;
-                float addContact = (contact.normal - stdNormal).magnitude;
-
-                if (addContact < addNormal)
-                    newNormal = contact.normal;
+                if (contacts[i].normal.y < minY)
+                {
+                    minY = contacts[i].normal.y;
+                    index = i;
+                }
             }
-            _normal = newNormal;
+            _normal = contacts[index].normal;
         }
     }
 
