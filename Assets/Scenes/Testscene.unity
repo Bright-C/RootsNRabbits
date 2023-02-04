@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 118629170}
   - component: {fileID: 118629171}
   - component: {fileID: 118629172}
+  - component: {fileID: 118629173}
+  - component: {fileID: 118629174}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -186,7 +188,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88fcf5328922b9349b2130dff9e312ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -308,6 +310,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c848d79ed3440b4a97df5877e9dbdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &118629173
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118629165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c237060b3916824e9851f127287359f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &118629174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118629165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862948f10e709534db3e697ced4c43d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySprite: {fileID: 118629166}
+  myRigidbody: {fileID: 118629168}
+  targetAnimator: {fileID: 118629173}
 --- !u!1 &175601129
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +614,7 @@ GameObject:
   - component: {fileID: 244363752}
   - component: {fileID: 244363751}
   - component: {fileID: 244363754}
+  - component: {fileID: 244363755}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -689,6 +727,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.293198}
   m_EdgeRadius: 0
+--- !u!114 &244363755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244363750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7aaaa4175442194d8f8791aa578fe12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endValue: 0.5
+  duration: 1
 --- !u!1 &246035540
 GameObject:
   m_ObjectHideFlags: 3
