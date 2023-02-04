@@ -82,11 +82,23 @@ public class RabbitMovement : MonoBehaviour
         }
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    CalcNormal(collision);
+    //    Orientate();
+    //}
+
     private void OnCollisionStay2D(Collision2D collision)
+    {
+        CalcNormal(collision);
+        Orientate();
+    }
+
+    private void CalcNormal(Collision2D collision)
     {
         List<ContactPoint2D> contacts = new();
         collision.GetContacts(contacts);
-        if(contacts.Count > 1)
+        if (contacts.Count > 1)
         {
             Vector2 stdNormal = new Vector2(0, 1);
             Vector2 newNormal = -stdNormal;
@@ -100,8 +112,6 @@ public class RabbitMovement : MonoBehaviour
             }
             _normal = newNormal;
         }
-
-        Orientate();
     }
 
     private void Orientate()
