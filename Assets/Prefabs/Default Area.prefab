@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -26.260967, y: -1.7837029, z: 0}
+    - position: {x: -27.087147, y: -3.6613846, z: 0}
       leftTangent: {x: 0.16521072, y: -0.32143402, z: 0}
       rightTangent: {x: -0.55039597, y: 1.070816, z: 0}
       mode: 1
@@ -110,8 +110,8 @@ MonoBehaviour:
       corner: 1
       m_CornerMode: 1
     - position: {x: -25.138165, y: 0.113996506, z: 0}
-      leftTangent: {x: -1.7745762, y: 0.71940327, z: 0}
-      rightTangent: {x: 1.746088, y: -0.7078543, z: 0}
+      leftTangent: {x: -0.7592392, y: -1.7578955, z: 0}
+      rightTangent: {x: 1.1866493, y: 2.7474976, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -6.1335144, y: -1.7940931, z: 0}
+    - position: {x: -6.0751934, y: -3.6020012, z: 0}
       leftTangent: {x: 0.5815544, y: -0.018852234, z: 0}
       rightTangent: {x: -3.3113089, y: 0.10734177, z: 0}
       mode: 1
@@ -170,7 +170,7 @@ MonoBehaviour:
       corner: 1
       m_CornerMode: 1
   m_SpriteShape: {fileID: 11400000, guid: 2c4c81816df3da143873f1da3d5d2507, type: 2}
-  m_FillPixelPerUnit: 256
+  m_FillPixelPerUnit: 160
   m_StretchTiling: 1
   m_SplineDetail: 16
   m_AdaptiveUV: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_WorldSpaceUV: 0
   m_CornerAngleThreshold: 30
   m_ColliderDetail: 16
-  m_ColliderOffset: 0.3
+  m_ColliderOffset: 0.351
   m_UpdateCollider: 1
   m_OptimizeCollider: 1
   m_OptimizeGeometry: 1
