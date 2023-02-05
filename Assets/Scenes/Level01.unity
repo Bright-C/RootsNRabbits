@@ -5784,14 +5784,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -353386855524547280, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.682
-      objectReference: {fileID: 0}
-    - target: {fileID: -353386855524547280, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.683
-      objectReference: {fileID: 0}
     - target: {fileID: 1964128050746428330, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
       propertyPath: m_Name
       value: DeathZone
@@ -5799,14 +5791,6 @@ PrefabInstance:
     - target: {fileID: 5481135215973912207, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481135215973912207, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 41.992622
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481135215973912207, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10.653906
       objectReference: {fileID: 0}
     - target: {fileID: 5481135215973912207, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5848,10 +5832,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6789011843853281402, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 527359924f1bff74894e927427ec4427, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ad180b6eccf3a94daa39d6f448dfece, type: 3}
 --- !u!1001 &6645758507210212978
