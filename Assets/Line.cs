@@ -17,13 +17,15 @@ public class Line : MonoBehaviour
 
     private readonly List<Vector2> _points = new List<Vector2>();
     void Start()
-    {
+    { 
+        _renderer.material.SetTextureScale("_MainTex", new Vector2(0.1f, 1f));
         _collider.transform.position -= transform.position;
     }
 
 
     void Update()
     {
+       
         _renderer.material.SetFloat("_Fade", _totalLength/6f);
     }
 

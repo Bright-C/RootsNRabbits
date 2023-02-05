@@ -126,6 +126,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   _myRigidbody: {fileID: 7598424531366022222}
+  jumpAudio: {fileID: 8300000, guid: 5f4694abd0ef4244fac2357b4a245f3f, type: 3}
 --- !u!50 &7598424531366022222
 Rigidbody2D:
   serializedVersion: 4
@@ -175,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e75ac3d730e664d8d2bdba194a5340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectSound: {fileID: 8300000, guid: 5623df64fd45a6f4c9476c8cd8286960, type: 3}
 --- !u!114 &7598424531366022218
 MonoBehaviour:
   m_ObjectHideFlags: 0
