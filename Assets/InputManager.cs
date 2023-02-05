@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : GameObjectSingletonPersistent<InputManager>
+public class InputManager : GameObjectSingleton<InputManager>
 {
     DefaultActions _inputActions;
     public DefaultActions InputActions
