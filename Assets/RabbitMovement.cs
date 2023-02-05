@@ -120,12 +120,12 @@ public class RabbitMovement : MonoBehaviour
         if (contacts.Count > 0)
         {
             int index = 0;
-            float minY = float.MaxValue;
+            float maxY = float.MinValue;
             for (int i = 0; i < contacts.Count; ++i)
             {
-                if (contacts[i].normal.y < minY)
+                if (contacts[i].normal.y > maxY)
                 {
-                    minY = contacts[i].normal.y;
+                    maxY = contacts[i].normal.y;
                     index = i;
                 }
             }
