@@ -37,6 +37,11 @@ public class DrawManager : MonoBehaviour
                     _currentLine.SetPosition(mousePos);
                 }
             }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                _currentLine = null;
+            }
         }
     }
 }
