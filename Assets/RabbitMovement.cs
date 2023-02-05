@@ -30,6 +30,9 @@ public class RabbitMovement : MonoBehaviour
     private Vector2 _lastPosition;
     private float _epsilonPosition = 0.1f;
     private bool _orientated = false;
+    [SerializeField] AudioClip jumpAudio;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,7 @@ public class RabbitMovement : MonoBehaviour
             {
                 jumpCooldownCount = jumpCooldown;
                 _myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Force);
+                SFXPlayer.Instance.PlayAudio(jumpAudio);
             }
         }
     }

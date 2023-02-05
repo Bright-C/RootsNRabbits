@@ -16,9 +16,11 @@ public class CollectibleSeed : MonoBehaviour
         
     }
 
+    public AudioClip collectSound;
     public void Collect()
     {
         Destroy(gameObject);
         LevelManager.Instance.CollectSeed();
+        SFXPlayer.Instance.PlayAudio(collectSound);
     }
 }
