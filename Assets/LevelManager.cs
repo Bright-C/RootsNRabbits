@@ -50,5 +50,6 @@ public class LevelManager : GameObjectSingleton<LevelManager>
     {
         onLoseLevel?.Invoke();
         SFXPlayer.Instance.PlayAudio(loseLevelAudio);
+        Destroy(GameObject.FindWithTag("Player"));
     }
 }
