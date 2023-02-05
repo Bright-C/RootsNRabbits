@@ -12,6 +12,7 @@ public class DrawManager : MonoBehaviour
     public const float MAXLENGTH = 6;
 
     private Line _currentLine;
+    [SerializeField] AudioClip _rootSound;
     void Start()
     {
         _cam = Camera.main;
@@ -27,6 +28,7 @@ public class DrawManager : MonoBehaviour
         {
             LevelManager.Instance.ConsumeSeed();
             _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
+            SFXPlayer.Instance.PlayAudio(_rootSound);
         }
         if (_currentLine != null)
         {
