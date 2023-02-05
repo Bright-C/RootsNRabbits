@@ -122,7 +122,7 @@ public class RabbitMovement : MonoBehaviour
         List<ContactPoint2D> contacts = new();
         collision.GetContacts(contacts);
         if (contacts.Count > 0)
-        {
+        { 
             int index = 0;
             float maxY = float.MinValue;
             for (int i = 0; i < contacts.Count; ++i)
