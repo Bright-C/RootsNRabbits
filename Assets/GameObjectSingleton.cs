@@ -22,6 +22,7 @@ public abstract class GameObjectSingletonPersistent<T> : GameObjectSingleton<T> 
         {
             Destroy(gameObject);
         }
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
         base.Awake();
     }
