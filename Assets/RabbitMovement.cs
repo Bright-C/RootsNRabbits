@@ -54,10 +54,10 @@ public class RabbitMovement : MonoBehaviour
     {
         Vector2 movement = InputManager.Instance.InputActions.Player.Move.ReadValue<Vector2>();
         movement.y = 0;
-        _myRigidbody.AddForce(movement * speedMultiplier * Time.deltaTime * AirSlowdown);
-        if (Mathf.Abs(_myRigidbody.velocity.x) > maximumVelocity)
+        if (Mathf.Abs(_myRigidbody.velocity.x) < maximumVelocity)
         {
-            _myRigidbody.AddForce(new Vector2(slowdownMultiplier * Time.deltaTime * -_myRigidbody.velocity.x, 0));
+            _myRigidbody.AddForce(movement * speedMultiplier * Time.deltaTime * AirSlowdown);
+            //_myRigidbody.AddForce(new Vector2(slowdownMultiplier * Time.deltaTime * -_myRigidbody.velocity.x, 0));
         }
 
     }
