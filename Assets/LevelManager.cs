@@ -8,7 +8,9 @@ public class LevelManager : GameObjectSingleton<LevelManager>
     public int availableSeeds = 0;
     UnityEvent onCollectSeed;
     public UnityEvent onWinLevel;
+    public UnityEvent onLoseLevel;
     [SerializeField] AudioClip wonLevelAudio;
+    [SerializeField] AudioClip loseLevelAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -42,5 +44,11 @@ public class LevelManager : GameObjectSingleton<LevelManager>
     {
         onWinLevel?.Invoke();
         SFXPlayer.Instance.PlayAudio(wonLevelAudio);
+    }
+
+    public void LoseLevel()
+    {
+        onLoseLevel?.Invoke();
+        SFXPlayer.Instance.PlayAudio(loseLevelAudio);
     }
 }

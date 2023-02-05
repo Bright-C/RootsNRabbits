@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7598424531366022218}
   - component: {fileID: 7598424531366022219}
   - component: {fileID: 7598424531366022216}
+  - component: {fileID: -2826181464067545780}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Player
@@ -176,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e75ac3d730e664d8d2bdba194a5340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSound: {fileID: 8300000, guid: 5623df64fd45a6f4c9476c8cd8286960, type: 3}
 --- !u!114 &7598424531366022218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +225,15 @@ MonoBehaviour:
   mySprite: {fileID: 7598424531366022224}
   myRigidbody: {fileID: 7598424531366022222}
   targetAnimator: {fileID: 7598424531366022219}
+--- !u!114 &-2826181464067545780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7598424531366022227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5001b596208a33b4fb5ed1311752e59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

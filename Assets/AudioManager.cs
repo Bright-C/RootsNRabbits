@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioManager : GameObjectSingletonPersistent<AudioManager>
+public class AudioManager : GameObjectSingleton<AudioManager>
 {
     public AudioMixer audioMixer;
     public void SetMusicVolume(float volume)
