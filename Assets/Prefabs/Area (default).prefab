@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3888348056959838416}
   - component: {fileID: 3888348056959838419}
   m_Layer: 0
-  m_Name: Default Area
+  m_Name: Area (default)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

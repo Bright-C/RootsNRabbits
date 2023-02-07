@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1102942593260622630}
   - component: {fileID: 1102942593260622631}
   m_Layer: 6
-  m_Name: Growable Area
+  m_Name: Area (growable)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
